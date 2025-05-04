@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Essence Plus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background: #111;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 2rem;
+      z-index: 2;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeInSlide 2s ease forwards;
+      opacity: 0;
+      margin-bottom: 2.5rem; /* Creates space below title */
+      margin-top: -2rem;      /* Pushes it higher */
+    }
+
+    .title span {
+      font-size: 3.5rem;
+      color: #cc0000;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeInSlide 2s ease forwards;
+      opacity: 0;
+      margin-bottom: 2.5rem; /* Creates space below title */
+      margin-top: -2rem;      /* Pushes it higher */
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .box {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+    }
+
+    .box i {
+      font-size: 5rem;
+      color: #cc0000;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      width: 180px;
+      padding: 0.6rem 0;
+      background-color: #cc0000;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+
+    .download-btn:hover {
+      background-color: #990000;
+    }
+
+    .discord-btn {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: #cc0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .discord-btn:hover {
+      background-color: #990000;
+    }
+
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at 40% 40%, rgba(204, 0, 0, 0.08), transparent 60%),
+                  radial-gradient(circle at 60% 60%, rgba(255, 0, 0, 0.04), transparent 70%),
+                  linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(40, 0, 0, 0.3));
+      animation: subtleMoveBg 30s ease-in-out infinite;
+      z-index: 0;
+      transform: translate(-10%, -10%);
+      pointer-events: none;
+    }
+
+    @media screen and (max-width: 600px) {
+  .container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 360px; /* Ensures it looks good on most phones */
+    height: 200px;
+    padding: 1.5rem;
+  }
+
+  .box i {
+    font-size: 3.5rem;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+
+  .discord-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+    width: auto; /* Let it fit to the text */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    align-self: center; /* Keeps it centered in the column */
+    justify-content: center; /* Align icon + text center */
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="animated-bg"></div>
+
+  <div class="container content">
+    <h1 class="title"><span>Essence</span>⁺</h1>
+
+    <div class="grid">
+      <div class="box">
+        <i class="fab fa-apple" aria-hidden="true"></i>
+        <a href="https://www.mediafire.com/file/x3hlzsq0mdu20rw/essence-mac.txt/file" class="download-btn" download>Essence Mac</a>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-desktop" aria-hidden="true"></i>
+        <a href="https://www.mediafire.com/file/8ne7j06gvixdcd4/essence-pc.txt/file" class="download-btn" download>Essence Windows</a>
+        
+      </div>
+
+      <div class="box">
+        <i class="fab fa-android" aria-hidden="true"></i>
+        <a href="file/Essence_671.apk" class="download-btn" download>Essence Android</a>
+      </div>
+      
+    </div>
+
+
+    <a href="https://discord.gg/hU64MD7YFV" target="_blank" class="discord-btn" aria-label="Join our Discord">
+      <i class="fab fa-discord"></i> Join Our Discordoo
+    </a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
